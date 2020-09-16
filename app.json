@@ -1,0 +1,12 @@
+{
+  "name": "NeteaseMusicAppFake",
+  "displayName": "NeteaseMusicAppFake",
+  "expo": {
+    "name": "NeteaseMusicAppFake",
+    "slug": "NeteaseMusicAppFake",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
