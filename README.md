@@ -1,18 +1,35 @@
-# NeteaseMusicApp
+## 编译并运行
+编译并运行之前需[搭建开发环境](https://reactnative.cn/docs/getting-started.html)：
+```shell script
+# Android编译并运行
+yarn android
+# 或者
+yarn react-native run-android
 
-## App stack.
+# ios编译并运行
+yarn ios
+# 或者
+yarn react-native run-ios
 
-Currently includes:
+# 运行storybook
+# 改变index.js 中的 SHOW_STORYBOOK 为 true并重载（reload）应用。
+# Visual Studio Code 用户可以安装 React Native Storybook 插件提升组件开发体验。
+yarn run storybook
+```
+
+## App 技术栈.
+
+主要技术栈:
 
 - React Native
 - React Navigation
 - MobX State Tree
 - TypeScript
-- And more!
+- Expo (For easy development)
 
 ## Quick Start
 
-App structure:
+程序结构:
 
 ```
 ├── app
@@ -59,9 +76,8 @@ App structure:
 
 ```
 
-### ./app directory
-
-Almost all react native code goes here.
+### ./app
+react native 代码文件夹：
 
 ```
 app
@@ -77,48 +93,35 @@ app
 ```
 
 **components**
-This is where React components will live. Each component will have a directory containing the `.tsx` file, along with a story file, and optionally `.presets`, and `.props` files for larger components. The app will come with some commonly used components like Button.
+组件目录。每个组件都应该是一个文件夹，里面存放`.tsx`文件和一个`*.stories.tsx`文件。复杂组件还应该包含`*.presets.ts`（样式）和`*.props.ts`（属性类型定义）文件。 
 
 **i18n**
-This is where translations will live if using `react-native-i18n`.
+国际化相关文件.
 
 **models**
-This is where your app's models will live. Each model has a directory which will contain the `mobx-state-tree` model file, test file, and any other supporting files like actions, types, etc.
+存放应用模型(models)。每个模型都是一个文件夹，里面包含`mobx-state-tree` 模型文件、test 文件，action和types文件。
 
 **navigation**
-This is where your `react-navigation` navigators will live.
+`react-navigation` navigators 相关文件。定义应用的导航层次结构。
 
 **screens**
-This is where your screen components will live. A screen is a React component which will take up the entire screen and be part of the navigation hierarchy. Each screen will have a directory containing the `.tsx` file, along with any assets or other helper files.
+`screen`相关文件。一个`screen`相当于一个完整的页面，占据大部分屏幕，是导航层次结构的一部分。应包含`.tsx`文件和其他支持文件`*.props.ts` `*.presets.ts`。
 
 **services**
-Any services that interface with the outside world will live here (think REST APIs, Push Notifications, etc.).
+任何与外界通信的服务(REST APIs, Push Notifications, etc.)。
 
 **theme**
-Here lives the theme for your application, including spacing, colors, and typography.
+应用设计相关常量 spacing, colors, 和typography。
 
 **utils**
-This is a great place to put miscellaneous helpers and utilities. Things like date helpers, formatters, etc. are often found here. However, it should only be used for things that are truely shared across your application. If a helper or utility is only used by a specific component or model, consider co-locating your helper with that component or model.
+通用helper函数和功能性函数
 
-**app.tsx** This is the entry point to your app. This is where you will find the main App component which renders the rest of the application. This is also where you will specify whether you want to run the app in storybook mode.
+**app.tsx** 应用入口。
 
-### ./ignite directory
 
-The `ignite` directory stores all things Ignite, including CLI and boilerplate items. Here you will find generators, plugins and examples to help you get started with React Native.
+### ./storybook
+[Storybook](https://storybook.js.org/docs/react/get-started/introduction) 配置文件
 
-### ./storybook directory
+### ./test
 
-This is where your stories will be registered and where the Storybook configs will live
-
-### ./test directory
-
-This directory will hold your Jest configs and mocks, as well as your [storyshots](https://github.com/storybooks/storybook/tree/master/addons/storyshots) test file. This is a file that contains the snapshots of all your component storybooks.
-
-## Running Storybook
-
-From the command line in your generated app's root directory, enter `yarn run storybook`
-This starts up the storybook server.
-
-In `index.js`, change `SHOW_STORYBOOK` to `true` and reload the app.
-
-For Visual Studio Code users, there is a handy extension that makes it easy to load Storybook use cases into a running emulator via tapping on items in the editor sidebar. Install the `React Native Storybook` extension by `Orta`, hit `cmd + shift + P` and select "Reconnect Storybook to VSCode". Expand the STORYBOOK section in the sidebar to see all use cases for components that have `.story.tsx` files in their directories.
+Jest config 和 mocks,  [storyshots](https://github.com/storybooks/storybook/tree/master/addons/storyshots) 测试文件，所有组件storybook的快照。
