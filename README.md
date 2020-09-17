@@ -18,7 +18,8 @@ yarn run storybook
 ```
 
 #### 在Expo客户端上运行App。
-使用Expo，可以仅用 JavaScript/TypeScript开发App并运行，不用搭建任何开发环境。但这是在没有使用任何自定原生内容的前提下。
+使用Expo，可以仅用 JavaScript/TypeScript开发App并运行，不用搭建任何开发环境。但这是在没有使用任何自定原生功能的前提下。
+开发前期使用可以提高开发效率，在后期添加原生功能后便不再可用。
 ```shell script
 # 运行Expo
 expo start
