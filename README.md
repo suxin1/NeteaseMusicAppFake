@@ -92,31 +92,31 @@ app
 └── app.tsx
 ```
 
-**components**
+* **./components**
 组件目录。每个组件都应该是一个文件夹，里面存放`.tsx`文件和一个`*.stories.tsx`文件。复杂组件还应该包含`*.presets.ts`（样式）和`*.props.ts`（属性类型定义）文件。 
 
-**i18n**
+* **./i18n**
 国际化相关文件.
 
-**models**
+* **./models**
 存放应用模型(models)。每个模型都是一个文件夹，里面包含`mobx-state-tree` 模型文件、test 文件，action和types文件。
 
-**navigation**
+* **./navigation**
 `react-navigation` navigators 相关文件。定义应用的导航层次结构。
 
-**screens**
+* **./screens**
 `screen`相关文件。一个`screen`相当于一个完整的页面，占据大部分屏幕，是导航层次结构的一部分。应包含`.tsx`文件和其他支持文件`*.props.ts` `*.presets.ts`。
 
-**services**
+* **./services**
 任何与外界通信的服务(REST APIs, Push Notifications, etc.)。
 
-**theme**
+* **./theme**
 应用设计相关常量 spacing, colors, 和typography。
 
-**utils**
+* **./utils**
 通用helper函数和功能性函数
 
-**app.tsx** 应用入口。
+* **app.tsx** 应用入口。
 
 
 ### ./storybook
