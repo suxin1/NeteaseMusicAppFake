@@ -1,6 +1,6 @@
 import React from "react";
 import {ButtonProps} from "./button.props";
-import {TouchableOpacity} from "react-native";
+import {TextStyle, TouchableOpacity, ViewStyle} from "react-native";
 import {mergeAll, flatten} from "ramda";
 import {textPresets, viewPresets} from "./button.presets";
 import {Text} from "../text/text";
@@ -10,8 +10,8 @@ export function Button(props: ButtonProps) {
     preset = "primary",
     tx,
     text,
-    style: styleOverride,
-    textStyle: textStyleOverride,
+    style: styleOverride = {} as ViewStyle,
+    textStyle: textStyleOverride = {} as TextStyle,
     children,
     ...rest
   } = props;
